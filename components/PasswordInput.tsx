@@ -1,16 +1,20 @@
 "use client";
 
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import { type ChangeEventHandler, useState } from "react";
 
 export default function PasswordInput({
   id = "password",
   name = "password",
   autoComplete = "current-password",
+  value,
+  onChange,
 }: {
   id?: string;
   name?: string;
   autoComplete?: "current-password" | "new-password";
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -21,6 +25,8 @@ export default function PasswordInput({
         name={name}
         type={isVisible ? "text" : "password"}
         autoComplete={autoComplete}
+        value={value}
+        onChange={onChange}
         required
         className="h-10 w-full rounded-lg border border-zinc-200 bg-white py-2 pr-11 pl-3 text-sm text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-brand focus:ring-2 focus:ring-brand/40"
       />
