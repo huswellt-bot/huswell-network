@@ -34,7 +34,7 @@ export default function SearchFilter({
 
   return (
     <section>
-      <div className="flex w-full">
+      <div className="flex w-full lg:max-w-2xl">
         <div className="relative w-full">
           <Search
             aria-hidden="true"
