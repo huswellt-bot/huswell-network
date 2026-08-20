@@ -13,7 +13,7 @@ export default async function Home() {
     <div className="mx-auto w-full max-w-screen-2xl px-4 py-12 sm:px-6 sm:py-16 lg:px-12">
       <section className="max-w-2xl">
         <p className="text-[11px] font-medium uppercase tracking-wider text-brand">
-          Sourcing hub · Philippines
+          Huswell Trading Suppliers Network
         </p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-zinc-900 sm:text-[2.5rem] sm:leading-[1.1]">
           Printing, packaging &amp; corporate giveaways. Sourced in one place.
