@@ -48,6 +48,11 @@ export const businesses: Business[] = [
       "/images/photo-huswell-trading-3.jpg",
       "/images/photo-huswell-trading-4.jpg",
       "/images/photo-huswell-trading-5.jpg",
+      "/images/photo-huswell-trading-6.jpg",
+      "/images/photo-huswell-trading-7.jpg",
+      "/images/photo-huswell-trading-8.jpg",
+      "/images/photo-huswell-trading-9.jpg",
+      "/images/photo-huswell-trading-10.jpg",
     ],
     contact: {
       phone: "+639173183354",

@@ -7,11 +7,16 @@ export default function PhotoGallery({
   images: string[];
   name: string;
 }) {
+  const galleryImages =
+    images.length > 0 && images.length < 10
+      ? Array.from({ length: 10 }, (_, index) => images[index % images.length])
+      : images;
+
   return (
     <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-proximity">
-      {images.map((image, index) => (
+      {galleryImages.map((image, index) => (
         <div
-          key={image}
+          key={`${image}-${index}`}
           className="h-64 w-64 shrink-0 snap-start overflow-hidden rounded-xl"
         >
           <Image

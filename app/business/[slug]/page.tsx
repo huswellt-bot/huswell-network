@@ -10,7 +10,6 @@ import {
   ExternalLink,
   MapPin,
   Package,
-  Timer,
 } from "lucide-react";
 import PhotoGallery from "@/components/PhotoGallery";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -43,7 +42,6 @@ export default async function BusinessPage({
 
   const details: { icon: ReactNode; label: string; value: string }[] = [
     { icon: <Package aria-hidden="true" className="h-4 w-4" />, label: "MOQ", value: business.moq },
-    { icon: <Timer aria-hidden="true" className="h-4 w-4" />, label: "Lead time", value: business.leadTime },
     { icon: <MapPin aria-hidden="true" className="h-4 w-4" />, label: "Address", value: business.contact.address ?? "Not listed" },
     { icon: <Clock aria-hidden="true" className="h-4 w-4" />, label: "Hours", value: business.hours },
     { icon: <Calendar aria-hidden="true" className="h-4 w-4" />, label: "Founded", value: business.founded },
