@@ -6,7 +6,7 @@ export default function WhatsAppButton({ number }: { number: string }) {
       <a
         href={`viber://chat?number=${number}`}
         aria-label="Chat with Huswell Trading on Viber"
-        className="flex h-12 items-center gap-2 rounded-full bg-[#7360f2] px-5 text-sm font-medium text-white transition-colors hover:bg-[#665cac] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7360f2]/40 focus-visible:ring-offset-2"
+        className="flex h-12 w-36 items-center justify-center gap-2 rounded-full bg-[#7360f2] text-sm font-medium text-white transition-colors hover:bg-[#665cac] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7360f2]/40 focus-visible:ring-offset-2"
       >
         <ViberIcon className="h-5 w-5 shrink-0" />
         Viber
@@ -16,7 +16,7 @@ export default function WhatsAppButton({ number }: { number: string }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Huswell Trading on WhatsApp"
-        className="flex h-12 items-center gap-2 rounded-full bg-[#25d366] px-5 text-sm font-medium text-white transition-colors hover:bg-[#1ebe5d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366]/40 focus-visible:ring-offset-2"
+        className="flex h-12 w-36 items-center justify-center gap-2 rounded-full bg-[#25d366] text-sm font-medium text-white transition-colors hover:bg-[#1ebe5d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366]/40 focus-visible:ring-offset-2"
       >
         <WhatsAppIcon className="h-5 w-5 shrink-0" />
         WhatsApp
