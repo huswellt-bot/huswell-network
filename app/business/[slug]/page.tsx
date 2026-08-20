@@ -3,7 +3,15 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, MapPin, Package, Timer } from "lucide-react";
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  ExternalLink,
+  MapPin,
+  Package,
+  Timer,
+} from "lucide-react";
 import PhotoGallery from "@/components/PhotoGallery";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getBusinessBySlug, businesses } from "@/lib/businesses";
@@ -78,9 +86,22 @@ export default async function BusinessPage({
           <p className="text-[11px] font-medium uppercase tracking-wider text-brand">
             {business.category}
           </p>
-          <h1 className="text-[28px] font-semibold tracking-tight text-zinc-900">
-            {business.name}
-          </h1>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <h1 className="text-[28px] font-semibold tracking-tight text-zinc-900">
+              {business.name}
+            </h1>
+            {business.contact.website && (
+              <a
+                href={`https://${business.contact.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-9 shrink-0 items-center gap-1.5 self-start rounded-lg border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-300 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2"
+              >
+                <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                Website
+              </a>
+            )}
+          </div>
           <p className="text-base text-zinc-500">{business.tagline}</p>
         </div>
 
@@ -132,9 +153,7 @@ export default async function BusinessPage({
           </div>
         </div>
       </div>
-      {business.contact.whatsapp && (
-        <WhatsAppButton number={business.contact.whatsapp} />
-      )}
+      <WhatsAppButton number="639167261251" />
     </div>
   );
 }

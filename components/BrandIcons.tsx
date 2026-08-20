@@ -5,3 +5,26 @@ export function WhatsAppIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function ViberIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M7.15 4.5h9.7A3.65 3.65 0 0 1 20.5 8.15v5.15a3.65 3.65 0 0 1-3.65 3.65h-4.12l-3.7 2.55.72-2.55H7.15A3.65 3.65 0 0 1 3.5 13.3V8.15A3.65 3.65 0 0 1 7.15 4.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.1 8.05c.28-.2.64-.14.83.13l.61.87c.17.24.16.56-.02.79l-.32.42c.43.84 1.1 1.5 1.94 1.93l.42-.31c.23-.18.55-.19.8-.02l.86.6c.28.2.33.56.14.84l-.3.43c-.22.32-.61.47-.98.37-2.2-.61-3.91-2.32-4.53-4.53-.1-.36.05-.75.37-.97l.43-.3Z"
+        fill="currentColor"
+      />
+      <path
+        d="M13.5 7.9c1.27.25 2.35 1.33 2.6 2.6M13.55 5.95a5.45 5.45 0 0 1 4.5 4.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
