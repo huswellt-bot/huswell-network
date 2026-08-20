@@ -34,7 +34,7 @@ export default function SearchFilter({
 
   return (
     <section>
-      <div className="flex w-full max-w-xl">
+      <div className="flex w-full">
         <div className="relative w-full">
           <Search
             aria-hidden="true"
@@ -51,47 +51,49 @@ export default function SearchFilter({
         </div>
       </div>
 
-      <div className="mt-4">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
-          Category
-        </p>
-        <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
-          {["All", ...categories].map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => setCategory(item)}
-              className={
-                item === category
-                  ? "shrink-0 rounded-full bg-brand px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
-                  : "shrink-0 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
-              }
-            >
-              {item}
-            </button>
-          ))}
+      <div className="mt-4 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
+            Category
+          </p>
+          <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+            {["All", ...categories].map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setCategory(item)}
+                className={
+                  item === category
+                    ? "shrink-0 rounded-full bg-brand px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
+                    : "shrink-0 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
+                }
+              >
+                {item}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="mt-4">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
-          Country
-        </p>
-        <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
-          {["All", ...countries].map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => setCountry(item)}
-              className={
-                item === country
-                  ? "shrink-0 rounded-full bg-brand px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
-                  : "shrink-0 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
-              }
-            >
-              {item}
-            </button>
-          ))}
+        <div className="lg:text-right">
+          <p className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
+            Country
+          </p>
+          <div className="mt-2 flex gap-2 overflow-x-auto pb-1 lg:justify-end">
+            {["All", ...countries].map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setCountry(item)}
+                className={
+                  item === country
+                    ? "shrink-0 rounded-full bg-brand px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
+                    : "shrink-0 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
+                }
+              >
+                {item}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
