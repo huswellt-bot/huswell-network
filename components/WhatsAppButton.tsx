@@ -2,7 +2,7 @@ import { ViberIcon, WhatsAppIcon } from "./BrandIcons";
 
 export default function WhatsAppButton({ number }: { number: string }) {
   return (
-    <div className="fixed right-6 bottom-6 z-20 flex flex-col items-end gap-3">
+    <div className="fixed right-6 bottom-6 z-20 flex items-center gap-3">
       <a
         href={`viber://chat?number=${number}`}
         aria-label="Chat with Huswell Trading on Viber"
