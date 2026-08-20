@@ -11,6 +11,7 @@ export type Business = {
   slug: string;
   name: string;
   category: string;
+  country: "Philippines" | "China" | "India";
   tagline: string;
   description: string[];
   coverImage: string;
@@ -31,6 +32,7 @@ export const businesses: Business[] = [
     slug: "huswell-trading",
     name: "Huswell Trading",
     category: "Packaging",
+    country: "Philippines",
     tagline:
       "Custom boxes designed & made in the Philippines: rigid boxes, PR kits, corrugated packaging, and printed folding cartons from Quezon City.",
     description: [
@@ -64,6 +66,7 @@ export const businesses: Business[] = [
     slug: "printwerk-studio",
     name: "PrintWerk Studio",
     category: "Printing",
+    country: "Philippines",
     tagline:
       "Digital printing studio in Quezon City for business cards, flyers, stickers, and short run packaging labels.",
     description: [
@@ -97,6 +100,7 @@ export const businesses: Business[] = [
     slug: "colorpress-offset",
     name: "ColorPress Offset Printing",
     category: "Printing",
+    country: "Philippines",
     tagline:
       "Offset and wide-format printer in Mandaluyong for brochures, catalogs, banners, and high-volume collateral.",
     description: [
@@ -130,6 +134,7 @@ export const businesses: Business[] = [
     slug: "kopyaquick-printing",
     name: "KopyaQuick Printing",
     category: "Printing",
+    country: "Philippines",
     tagline:
       "Same day quick print in Manila for calling cards, certificates, tarpaulins, and office forms while you wait.",
     description: [
@@ -163,6 +168,7 @@ export const businesses: Business[] = [
     slug: "boxzone-packaging",
     name: "BoxZone Packaging",
     category: "Packaging",
+    country: "Philippines",
     tagline:
       "Custom corrugated boxes in Valenzuela for shipping cartons, product boxes, and protective packaging at fair trade pricing.",
     description: [
@@ -196,6 +202,7 @@ export const businesses: Business[] = [
     slug: "kraftbox-solutions",
     name: "KraftBox Solutions",
     category: "Packaging",
+    country: "Philippines",
     tagline:
       "Eco kraft and corrugated packaging from Bulacan for mailer boxes, bakery boxes, and sustainable retail packaging.",
     description: [
@@ -229,6 +236,7 @@ export const businesses: Business[] = [
     slug: "primecarton",
     name: "PrimeCarton Corp.",
     category: "Packaging",
+    country: "Philippines",
     tagline:
       "Rigid boxes, mailer boxes, and premium retail packaging from Pampanga, built for product launches and gift sets.",
     description: [
@@ -262,6 +270,7 @@ export const businesses: Business[] = [
     slug: "goodbag-ph",
     name: "GoodyBag PH",
     category: "Corporate Giveaways",
+    country: "Philippines",
     tagline:
       "Corporate giveaways from Makati for tote bags, tumblers, lanyards, and event kits with your branding.",
     description: [
@@ -295,6 +304,7 @@ export const businesses: Business[] = [
     slug: "swagworks-manila",
     name: "SwagWorks Manila",
     category: "Corporate Giveaways",
+    country: "Philippines",
     tagline:
       "Apparel and merch supplier for embroidered polo shirts, caps, hoodies, and company uniforms.",
     description: [
@@ -336,4 +346,8 @@ export function getBusinessBySlug(slug: string): Business | undefined {
 
 export function getCategories(): string[] {
   return [...new Set(businesses.map((business) => business.category))];
+}
+
+export function getCountries(): Business["country"][] {
+  return ["Philippines", "China", "India"];
 }

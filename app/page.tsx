@@ -1,11 +1,13 @@
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 import SearchFilter from "@/components/SearchFilter";
-import { getAllBusinesses, getCategories } from "@/lib/businesses";
+import { getAllBusinesses, getCategories, getCountries } from "@/lib/businesses";
 import { requireUser } from "@/lib/supabase/auth";
 
 export default async function Home() {
   await requireUser();
   const businesses = getAllBusinesses();
   const categories = getCategories();
+  const countries = getCountries();
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -23,7 +25,15 @@ export default async function Home() {
       </section>
 
       <div className="mt-10">
-        <SearchFilter businesses={businesses} categories={categories} />
+        <AnnouncementBanner />
+      </div>
+
+      <div className="mt-8">
+        <SearchFilter
+          businesses={businesses}
+          categories={categories}
+          countries={countries}
+        />
       </div>
     </div>
   );
