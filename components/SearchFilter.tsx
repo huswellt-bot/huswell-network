@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import type { Business } from "@/lib/businesses";
 import BusinessCard from "./BusinessCard";
 
@@ -75,24 +75,29 @@ export default function SearchFilter({
         </div>
 
         <div className="lg:text-right">
-          <p className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
+          <label
+            htmlFor="country-filter"
+            className="text-[11px] font-medium uppercase tracking-wider text-zinc-400"
+          >
             Country
-          </p>
-          <div className="mt-2 flex gap-2 overflow-x-auto pb-1 lg:justify-end">
-            {["All", ...countries].map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => setCountry(item)}
-                className={
-                  item === country
-                    ? "shrink-0 rounded-full bg-brand px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
-                    : "shrink-0 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
-                }
-              >
-                {item}
-              </button>
-            ))}
+          </label>
+          <div className="relative mt-2 lg:ml-auto lg:w-48">
+            <select
+              id="country-filter"
+              value={country}
+              onChange={(event) => setCountry(event.target.value)}
+              className="w-full appearance-none rounded-lg border border-zinc-200 bg-white py-2 pr-10 pl-3 text-sm text-zinc-700 transition-colors hover:border-zinc-300 focus:border-brand focus:ring-2 focus:ring-brand/40 focus:outline-none"
+            >
+              {["All", ...countries].map((item) => (
+                <option key={item} value={item}>
+                  {item === "All" ? "All countries" : item}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              aria-hidden="true"
+              className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-zinc-400"
+            />
           </div>
         </div>
       </div>
